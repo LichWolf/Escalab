@@ -1,0 +1,35 @@
+.Atributos {
+  display: flex;
+  flex-direction: row;
+  background-color: pink;
+}
+.Habilidades {
+  display: flex;
+  flex-direction: row;
+}
+.puntoNegro {
+  width: 20px;
+  height: 10px;
+}
+.puntoBlanco {
+  width: 15px;
+  height: 10px;
+}
+.grid-container {
+  display: inline-grid;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
+  width: 95%;
+}
+.grid-item {
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+  border: 1px solid black;
+}
+p .title {
+  font-size: 16px;
+}
+p {
+  font-size: 12px;
+}
