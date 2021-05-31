@@ -1,3 +1,9 @@
+.title1{
+  display: flex;
+  justify-content: center;
+  background-color: pink;
+}
+
 .Atributos {
   display: flex;
   flex-direction: row;
@@ -23,13 +29,20 @@
 }
 .grid-item {
   padding: 20px;
-  font-size: 30px;
   text-align: center;
   border: 1px solid black;
 }
-p .title {
-  font-size: 16px;
+.title {
+  background-color: aqua;
+  font-size: 24px;
 }
-p {
+/* .list {
+  display: flex;
+  align-items: flex-start;
   font-size: 12px;
+} */
+
+.button{
+  height: 10px;
+  width: 10px;
 }
