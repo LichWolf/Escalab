@@ -1,6 +1,6 @@
-<div *ngIf="logged; else error">
+<div *ngIf="!logged; else error">
     <span>validar logeo </span>
-    <app-inicio></app-inicio>
+    <app-login></app-login>
 </div>
 <div>
     <ng-template #error>

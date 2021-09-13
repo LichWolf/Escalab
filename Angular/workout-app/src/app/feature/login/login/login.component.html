@@ -1,8 +1,35 @@
-<div>
-    datos de logeo
+<div class="Container">
 
-    <input>
+    <mat-card class="login">
+        <div class="loginHeader">
+            <mat-card-header>
+                Bienvenido, por favor ingresa tus datos para iniciar sesión
+            </mat-card-header>
+        </div>
+        <div class=" loginEmail">
+            <mat-form-field appearance="fill">
+                <mat-label>Ingresa tu email</mat-label>
+                <input matInput placeholder="pat@example.com" (formControl)="email" required>
+                <mat-error *ngIf="email.invalid">{{getMailError()}}</mat-error>
+            </mat-form-field>
+        </div>
+        <div class="loginPassword">
+            <mat-form-field appearance="fill">
+                <mat-label>Enter your password</mat-label>
+                <input matInput [type]="hide ? 'password' : 'text'">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                    [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+            </mat-form-field>
 
-    <button>Iniciar Sesión </button>
+        </div>
+
+        <mat-card-actions class="loginIn" align=end (click)="test()">
+            <button mat-button>
+                Iniciar Sesión
+            </button>
+        </mat-card-actions>
+    </mat-card>
 
 </div>
