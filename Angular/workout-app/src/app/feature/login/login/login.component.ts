@@ -5,6 +5,7 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { Router } from '@angular/router';
 import { LoginService } from 'src/app/services/login.service';
 
 @Component({
@@ -14,36 +15,51 @@ import { LoginService } from 'src/app/services/login.service';
 })
 export class LoginComponent implements OnInit {
   email = new FormControl('', [Validators.required, Validators.email]);
-  hide = true;
+  validateEmail: boolean = false;
+  validatePassword: boolean = false;
+  validateForm: boolean = false;
   isLoging: boolean = false;
   loginForm!: FormGroup;
 
-  constructor(private _LoginService: LoginService, private fb: FormBuilder) {}
+  constructor(
+    private _LoginService: LoginService,
+    private fb: FormBuilder,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
-    // this.getMailError();
-    // console.log(this.form.controlName.value);
     this.loginForm = this.fb.group({
       email: [''],
-      password: [''],
+      clave: [''],
     });
   }
 
   public async validateLogin() {
     let response = await this._LoginService.getLoginData();
-    // console.log(this.form.controls['email']).value;
-    // this.clave = '';
-    // for (let i = 0; i < response.length; i++) {
-    //   if (this.correo === response[i].email) {
-    //     console.log('correo valido');
-    //     return response;
-    //   } else {
-    //     console.log('invalido');
-    //   }
+    for (let i = 0; i < response.length; i++) {
+      if (this.loginForm.value.email === response[i].email) {
+        this.validateEmail = true;
+        console.log(this.validateEmail);
+      }
+    }
+    for (let i = 0; i < response.length; i++) {
+      if (this.loginForm.value.clave === response[i].clave) {
+        this.validatePassword = true;
+        console.log(this.validatePassword);
+      }
+    }
+    if (this.validatePassword && this.validateEmail) {
+      this.validateForm = true;
+    }
+    // else{
+    //  TODO: levantar modal
     // }
   }
 
   Submit() {
-    console.log(this.loginForm.value);
+    this.validateLogin();
+    if (this.validateForm == true) {
+      this.router.navigateByUrl('user');
+    }
   }
 }

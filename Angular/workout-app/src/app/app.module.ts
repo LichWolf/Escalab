@@ -7,20 +7,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CoreComponent } from './core/core.component';
 import { LoginComponent } from './feature/login/login/login.component';
 import { LoginModule } from './feature/login/login/login.module';
+import { InicioComponent } from './feature/components/inicio.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    CoreComponent,
-    LoginComponent,
-  ],
+  declarations: [AppComponent, CoreComponent, LoginComponent, InicioComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    LoginModule
+    LoginModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

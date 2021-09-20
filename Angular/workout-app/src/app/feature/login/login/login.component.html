@@ -2,24 +2,26 @@
     <form [formGroup]="loginForm" (submit)="Submit()">
         <mat-card class="login">
             <mat-card-header>
-                <mat-card-title>Profile Information</mat-card-title>
+                <mat-card-title>Bienvenido, ingresa tus datos</mat-card-title>
             </mat-card-header>
             <mat-card-content>
-                <div>
+                <div class="fieldContainer">
                     <div class="loginEmail">
                         <mat-form-field>
                             <mat-label>Ingresa Tu Email</mat-label>
-                            <input formControlName="email" matInput="" type="email">
+                            <input formControlName="email" matInput="" type="email" placeholder="correo@correo.com">
                         </mat-form-field>
                     </div>
                     <div class="loginPassword">
                         <mat-form-field>
                             <mat-label>Ingresa Tu Clave</mat-label>
-                            <input formControlName="password" matInput="" type="password">
+                            <input formControlName="clave" matInput="" type="clave" placeholder="*******">
                         </mat-form-field>
                     </div>
                 </div>
             </mat-card-content>
-            <button class="loginIn" mat-raised-button color="primary" type="submit">Log In</button>
+            <button class="loginIn" mat-raised-button color="primary" type="submit" (click)="Submit()">Log
+                In</button>
         </mat-card>
     </form>
+</div>
