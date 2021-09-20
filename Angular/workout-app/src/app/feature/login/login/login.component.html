@@ -10,7 +10,7 @@
             <mat-form-field appearance="fill">
                 <mat-label>Ingresa tu email</mat-label>
                 <input matInput placeholder="pat@example.com" (formControl)="email" required>
-                <mat-error *ngIf="email.invalid">{{getMailError()}}</mat-error>
+                div
             </mat-form-field>
         </div>
         <div class="loginPassword">
@@ -25,11 +25,12 @@
 
         </div>
 
-        <mat-card-actions class="loginIn" align=end (click)="test()">
-            <button mat-button>
+        <mat-card-actions class="loginIn" align=end>
+            <button mat-button (click)="this.validateLogin();">
                 Iniciar Sesión
             </button>
         </mat-card-actions>
     </mat-card>
 
+    <p>Value{{email.value}}</p>
 </div>

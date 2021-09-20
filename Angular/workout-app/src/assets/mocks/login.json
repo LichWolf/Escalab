@@ -1,0 +1,9 @@
+{
+  "status": {
+    "code": "200",
+    "description": "the request was successful, the data is returned."
+  },
+  "data": {
+    "logindata": "{\"access_token\":\"mKSetPdx77C78uohA9qiDGbjyd1q\"}"
+  }
+}
