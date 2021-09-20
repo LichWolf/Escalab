@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 import { LoginService } from 'src/app/services/login.service';
 
 @Component({
@@ -10,21 +15,24 @@ import { LoginService } from 'src/app/services/login.service';
 export class LoginComponent implements OnInit {
   email = new FormControl('', [Validators.required, Validators.email]);
   hide = true;
-  correo: string = '';
-  clave: string = '';
   isLoging: boolean = false;
+  loginForm!: FormGroup;
 
-  constructor(private _LoginService: LoginService) {}
+  constructor(private _LoginService: LoginService, private fb: FormBuilder) {}
 
   ngOnInit(): void {
     // this.getMailError();
     // console.log(this.form.controlName.value);
+    this.loginForm = this.fb.group({
+      email: [''],
+      password: [''],
+    });
   }
 
   public async validateLogin() {
     let response = await this._LoginService.getLoginData();
     // console.log(this.form.controls['email']).value;
-    this.clave = '';
+    // this.clave = '';
     // for (let i = 0; i < response.length; i++) {
     //   if (this.correo === response[i].email) {
     //     console.log('correo valido');
@@ -34,10 +42,8 @@ export class LoginComponent implements OnInit {
     //   }
     // }
   }
-  // getMailError() {
-  //   if (this.email.hasError('required')) {
-  //     return 'Debes ingresar un email';
-  //   }
-  //   return this.email.hasError('email') ? 'No es un email valido' : '';
-  // }
+
+  Submit() {
+    console.log(this.loginForm.value);
+  }
 }

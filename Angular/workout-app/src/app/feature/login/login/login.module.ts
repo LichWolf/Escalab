@@ -1,11 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {MatInputModule} from '@angular/material/input';
-import {MatCardModule} from '@angular/material/card';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatIconModule} from '@angular/material/icon';
-
-
+import { MatInputModule } from '@angular/material/input';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [],
@@ -14,11 +13,17 @@ import {MatIconModule} from '@angular/material/icon';
     MatInputModule,
     MatCardModule,
     MatFormFieldModule,
-    MatIconModule
+    MatIconModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
-  exports: [ MatInputModule,
+  exports: [
+    MatInputModule,
     MatCardModule,
     MatFormFieldModule,
-    MatIconModule]
+    MatIconModule,
+    FormsModule,
+    ReactiveFormsModule,
+  ],
 })
-export class LoginModule { }
+export class LoginModule {}

@@ -1,36 +1,25 @@
 <div class="Container">
-
-    <mat-card class="login">
-        <div class="loginHeader">
+    <form [formGroup]="loginForm" (submit)="Submit()">
+        <mat-card class="login">
             <mat-card-header>
-                Bienvenido, por favor ingresa tus datos para iniciar sesión
+                <mat-card-title>Profile Information</mat-card-title>
             </mat-card-header>
-        </div>
-        <div class=" loginEmail">
-            <mat-form-field appearance="fill">
-                <mat-label>Ingresa tu email</mat-label>
-                <input matInput placeholder="pat@example.com" (formControl)="email" required>
-                div
-            </mat-form-field>
-        </div>
-        <div class="loginPassword">
-            <mat-form-field appearance="fill">
-                <mat-label>Enter your password</mat-label>
-                <input matInput [type]="hide ? 'password' : 'text'">
-                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-                    [attr.aria-pressed]="hide">
-                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-                </button>
-            </mat-form-field>
-
-        </div>
-
-        <mat-card-actions class="loginIn" align=end>
-            <button mat-button (click)="this.validateLogin();">
-                Iniciar Sesión
-            </button>
-        </mat-card-actions>
-    </mat-card>
-
-    <p>Value{{email.value}}</p>
-</div>
+            <mat-card-content>
+                <div>
+                    <div class="loginEmail">
+                        <mat-form-field>
+                            <mat-label>Ingresa Tu Email</mat-label>
+                            <input formControlName="email" matInput="" type="email">
+                        </mat-form-field>
+                    </div>
+                    <div class="loginPassword">
+                        <mat-form-field>
+                            <mat-label>Ingresa Tu Clave</mat-label>
+                            <input formControlName="password" matInput="" type="password">
+                        </mat-form-field>
+                    </div>
+                </div>
+            </mat-card-content>
+            <button class="loginIn" mat-raised-button color="primary" type="submit">Log In</button>
+        </mat-card>
+    </form>
