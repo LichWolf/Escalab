@@ -8,6 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DialogComponent } from 'src/app/shared/components/dialog/dialog.component';
+import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
   declarations: [],
@@ -21,6 +22,7 @@ import { DialogComponent } from 'src/app/shared/components/dialog/dialog.compone
     ReactiveFormsModule,
     MatSidenavModule,
     MatDialogModule,
+    MatMenuModule,
   ],
   exports: [
     MatInputModule,
@@ -31,6 +33,7 @@ import { DialogComponent } from 'src/app/shared/components/dialog/dialog.compone
     ReactiveFormsModule,
     MatSidenavModule,
     MatDialogModule,
+    MatMenuModule,
   ],
   entryComponents: [DialogComponent],
 })
