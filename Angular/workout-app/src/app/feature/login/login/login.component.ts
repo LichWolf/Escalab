@@ -20,6 +20,7 @@ export class LoginComponent implements OnInit {
   validateForm: boolean = false;
   isLoging: boolean = false;
   loginForm!: FormGroup;
+  userData: string | undefined;
 
   constructor(
     private _LoginService: LoginService,
@@ -38,8 +39,8 @@ export class LoginComponent implements OnInit {
     let response = await this._LoginService.getLoginData();
     for (let i = 0; i < response.length; i++) {
       if (this.loginForm.value.email === response[i].email) {
+        this.userData = response[i];
         this.validateEmail = true;
-        console.log(this.validateEmail);
       }
     }
     for (let i = 0; i < response.length; i++) {
