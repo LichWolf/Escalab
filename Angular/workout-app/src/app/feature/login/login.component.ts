@@ -5,8 +5,10 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { LoginService } from 'src/app/services/login.service';
+import { DialogComponent } from 'src/app/shared/components/dialog/dialog.component';
 
 @Component({
   selector: 'app-login',
@@ -25,7 +27,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private _LoginService: LoginService,
     private fb: FormBuilder,
-    private router: Router
+    private router: Router,
+    private dialog: MatDialog
   ) {}
 
   ngOnInit(): void {
@@ -39,28 +42,32 @@ export class LoginComponent implements OnInit {
     let response = await this._LoginService.getLoginData();
     for (let i = 0; i < response.length; i++) {
       if (this.loginForm.value.email === response[i].email) {
-        this.userData = response[i];
         this.validateEmail = true;
       }
     }
     for (let i = 0; i < response.length; i++) {
       if (this.loginForm.value.clave === response[i].clave) {
         this.validatePassword = true;
-        console.log(this.validatePassword);
       }
     }
     if (this.validatePassword && this.validateEmail) {
       this.validateForm = true;
+    } else {
+      this.openDialog();
     }
-    // else{
-    //  TODO: levantar modal
-    // }
   }
 
-  Submit() {
+  submit() {
     this.validateLogin();
     if (this.validateForm == true) {
       this.router.navigateByUrl('user');
     }
+  }
+
+  openDialog() {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = true; //the user will not be able to close the dialog just by clicking outside of it
+    dialogConfig.autoFocus = true; //the focus will be set automatically on the first form field of the dialog
+    this.dialog.open(DialogComponent, dialogConfig);
   }
 }
