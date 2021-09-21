@@ -1,0 +1,41 @@
+.login {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+  border: black 1px solid;
+  margin: 10%;
+  height: 100%;
+  border-radius: 8px;
+  color: black;
+  background-color: #3c5261;
+
+  .fieldContainer {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .loginEmail {
+    border: black 1px solid;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    margin-top: 5%;
+    color: black;
+  }
+  .loginPassword {
+    border: black 1px solid;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
+    border-radius: 8px;
+    color: black;
+  }
+  .loginIn {
+    margin: 5% 0% 0% 75%;
+    border-radius: 8px;
+    width: 25%;
+    background-color: aquamarine;
+  }
+}
