@@ -1,4 +1,30 @@
 .user-table-container {
+}
+
+.formCamps {
   display: flex;
-  background-color: blue;
+  flex-wrap: wrap;
+  background: none;
+}
+
+.name,
+.secondName,
+.lastName,
+.secondLastName,
+.region,
+.state,
+.direction,
+.department {
+  width: 35%;
+  border: 1px solid;
+  margin: 4%;
+  border-radius: 8px;
+}
+::ng-deep .matform-field-infix {
+  display: block;
+  position: relative;
+  flex: auto;
+  width: 390px;
+  border: 1px solid;
+  border-radius: 8px;
 }

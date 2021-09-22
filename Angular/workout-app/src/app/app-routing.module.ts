@@ -6,6 +6,7 @@ import { LoginComponent } from './feature/login/login.component';
 const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'user', component: InicioComponent },
+  { path: 'user/profile', component: InicioComponent },
 ];
 
 @NgModule({

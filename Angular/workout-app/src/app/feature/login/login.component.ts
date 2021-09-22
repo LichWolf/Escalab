@@ -16,13 +16,11 @@ import { DialogComponent } from 'src/app/shared/components/dialog/dialog.compone
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  email = new FormControl('', [Validators.required, Validators.email]);
-  validateEmail: boolean = false;
-  validatePassword: boolean = false;
   validateForm: boolean = false;
   isLoging: boolean = false;
   loginForm!: FormGroup;
   userData: string | undefined;
+  userID: number | undefined;
 
   constructor(
     private _LoginService: LoginService,
@@ -38,29 +36,28 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  public async validateLogin() {
-    let response = await this._LoginService.getLoginData();
+  public async getUserID() {
+    let response = await this._LoginService.getUserID();
+    let auxEmail = this.loginForm.value.email;
     for (let i = 0; i < response.length; i++) {
-      if (this.loginForm.value.email === response[i].email) {
-        this.validateEmail = true;
+      if (auxEmail == response[i].email) {
+        this.userID = response[i].UserID;
       }
     }
-    for (let i = 0; i < response.length; i++) {
-      if (this.loginForm.value.clave === response[i].clave) {
-        this.validatePassword = true;
-      }
-    }
-    if (this.validatePassword && this.validateEmail) {
-      this.validateForm = true;
-    } else {
-      this.openDialog();
-    }
+    return this.userID;
   }
 
-  submit() {
-    this.validateLogin();
-    if (this.validateForm == true) {
+  public async validateUser() {
+    await this.getUserID();
+    const id = this.userID;
+    let respone = await this._LoginService.getUserData(id);
+    let email = this.loginForm.value.email;
+    let clave = this.loginForm.value.clave;
+    if (email == respone[0].email && clave == respone[0].clave) {
+      this.validateForm = true;
       this.router.navigateByUrl('user');
+    } else {
+      this.openDialog();
     }
   }
 

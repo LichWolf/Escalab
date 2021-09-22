@@ -16,4 +16,7 @@ export class SideMenuComponent implements OnInit {
   logOut() {
     this.router.navigateByUrl('');
   }
+  profile() {
+    this.router.navigateByUrl('user/profile');
+  }
 }

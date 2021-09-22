@@ -1,13 +1,11 @@
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import axios from "axios";
+import axios from 'axios';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class LoginService {
-
   private endpoint: string;
   private header: {};
   private params: {};
@@ -16,31 +14,37 @@ export class LoginService {
     this.endpoint = '';
     this.header = {};
     this.params = {};
-    if(environment.local){
+    if (environment.local) {
       this.initializeLoginServiceLocal();
-    }else{
+    } else {
       this.initializeLoginServiceDummy();
     }
-   }
-
-  private initializeLoginServiceLocal(){
-  this.endpoint = `${environment.ip.local}${environment.ruta.user}`;
-  this.header = {
-    'Content-Type': 'aplication/json'
-  };
-  this.params = {};
   }
 
-  
-  private initializeLoginServiceDummy(){
-
+  private initializeLoginServiceLocal() {
+    this.endpoint = `${environment.ip.local}${environment.ruta.user}`;
+    this.header = {
+      'Content-Type': 'aplication/json',
+    };
+    this.params = {};
   }
 
-  public async getLoginData(){
+  private initializeLoginServiceDummy() {}
+
+  public async getUserID() {
     const promise = await axios.get(this.endpoint, {
       headers: this.header,
-      params: this.params
+      params: this.params,
     });
-    return  promise.data;
+    return promise.data;
+  }
+
+  public async getUserData(id: any) {
+    this.endpoint = `${environment.ip.local}${environment.ruta.user}/${id}`;
+    const promise = await axios.get(this.endpoint, {
+      headers: this.header,
+      params: this.params,
+    });
+    return promise.data;
   }
 }
