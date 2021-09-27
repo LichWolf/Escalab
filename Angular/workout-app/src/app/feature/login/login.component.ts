@@ -1,12 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  FormBuilder,
-  FormControl,
-  FormGroup,
-  Validators,
-} from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 import { LoginService } from 'src/app/services/login.service';
 import { DialogComponent } from 'src/app/shared/components/dialog/dialog.component';
 
@@ -26,7 +22,8 @@ export class LoginComponent implements OnInit {
     private _LoginService: LoginService,
     private fb: FormBuilder,
     private router: Router,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private authService: AuthService
   ) {}
 
   ngOnInit(): void {
@@ -36,24 +33,12 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  public async getUserID() {
-    let response = await this._LoginService.getUserID();
-    let auxEmail = this.loginForm.value.email;
-    for (let i = 0; i < response.length; i++) {
-      if (auxEmail == response[i].email) {
-        this.userID = response[i].UserID;
-      }
-    }
-    return this.userID;
-  }
-
   public async validateUser() {
-    await this.getUserID();
-    const id = this.userID;
-    let respone = await this._LoginService.getUserData(id);
     let email = this.loginForm.value.email;
+    let respone = await this._LoginService.getUserData(email);
     let clave = this.loginForm.value.clave;
     if (email == respone[0].email && clave == respone[0].clave) {
+      this.authService.login();
       this.validateForm = true;
       this.router.navigateByUrl('user');
     } else {

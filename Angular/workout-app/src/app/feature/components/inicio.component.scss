@@ -1,15 +1,17 @@
+@import "~src/assets/scss/colors";
+
 .container {
   width: 95%;
   height: 95%;
   margin: 10px;
   border: 1px solid #555;
-  background-color: red;
 
   .side-menu {
     width: 15%;
   }
   .central-data {
     width: 75%;
-    background-color: black;
+    margin: 1% 0% 0% 10%;
+    background-color: $white;
   }
 }

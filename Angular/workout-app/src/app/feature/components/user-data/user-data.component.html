@@ -1,7 +1,7 @@
-<div class='user-table-container'>
+<div>
     <div>
         <form [formGroup]="loginForm" (submit)="submit()">
-            <mat-card>
+            <mat-card class='user-table-container'>
                 <mat-card-header>
                     <mat-card-title>Información del Perfil</mat-card-title>
                 </mat-card-header>
@@ -10,58 +10,56 @@
                         <div class='name'>
                             <mat-form-field>
                                 <mat-label>Ingresa Tu Nombre</mat-label>
-                                <input formControlName="name" matInput="" type="name" placeholder="correo@correo.com">
+                                <input formControlName="name" matInput="" type="name">
                             </mat-form-field>
                         </div>
                         <div class='secondName'>
                             <mat-form-field>
                                 <mat-label>Ingresa Tu Segundo Nombre</mat-label>
-                                <input formControlName="secondName" matInput="" type="secondeName"
-                                    placeholder="*******">
+                                <input formControlName="secondName" matInput="" type="secondeName">
                             </mat-form-field>
                         </div>
                         <div class='lastName'>
                             <mat-form-field>
                                 <mat-label>Ingresa Tu Apellido</mat-label>
-                                <input formControlName="lastName" matInput="" type="lastName" placeholder="*******">
+                                <input formControlName="lastName" matInput="" type="lastName">
                             </mat-form-field>
                         </div>
                         <div class='secondLastName'>
                             <mat-form-field>
                                 <mat-label>Ingresa Tu Segundo Apellido</mat-label>
-                                <input formControlName="secondLastName" matInput="" type="secondLastName"
-                                    placeholder="*******">
+                                <input formControlName="secondLastName" matInput="" type="secondLastName">
                             </mat-form-field>
                         </div>
                         <div class='region'>
                             <mat-form-field>
                                 <!-- TODO: desplegar opciones de regiones -->
                                 <mat-label>Región </mat-label>
-                                <input formControlName="region" matInput="" type="region" placeholder="*******">
+                                <input formControlName="region" matInput="" type="region">
                             </mat-form-field>
                         </div>
                         <div class='state'>
                             <mat-form-field>
                                 <mat-label>Ingresa Tu Comuna</mat-label>
-                                <input formControlName="state" matInput="" type="state" placeholder="*******">
+                                <input formControlName="state" matInput="" type="state">
                             </mat-form-field>
                         </div>
                         <div class='direction'>
                             <mat-form-field>
                                 <mat-label>Dirección</mat-label>
-                                <input formControlName="direction" matInput="" type="direction" placeholder="*******">
+                                <input formControlName="direction" matInput="" type="direction">
                             </mat-form-field>
                         </div>
                         <div class='department'>
                             <mat-form-field>
                                 <mat-label>Departamento (Opcional)</mat-label>
-                                <input formControlName="department" matInput="" type="department" placeholder="*******">
+                                <input formControlName="department" matInput="" type="department">
                             </mat-form-field>
                         </div>
 
                     </div>
                 </mat-card-content>
-                <button mat-raised-button color="primary" type="submit" (click)="submit()">Save</button>
+                <button mat-raised-button color="primary" type="submit" (click)="submit()">Actualizar</button>
             </mat-card>
         </form>
     </div>

@@ -1,4 +1,7 @@
+@import "~src/assets/scss/_colors";
+
 .user-table-container {
+  background-color: $white;
 }
 
 .formCamps {
@@ -19,7 +22,20 @@
   border: 1px solid;
   margin: 4%;
   border-radius: 8px;
+  border: 1px solid black;
 }
+
+::ng-deep .ng-tns-c106-2.ng-star-inserted,
+.ng-tns-c106-3.ng-star-inserted,
+.ng-tns-c106-4.ng-star-inserted,
+.ng-tns-c106-5.ng-star-inserted,
+.ng-tns-c106-6.ng-star-inserted,
+.ng-tns-c106-7.ng-star-inserted,
+.ng-tns-c106-8.ng-star-inserted,
+.ng-tns-c106-9.ng-star-inserted {
+  color: $dark-light-blue;
+}
+
 ::ng-deep .matform-field-infix {
   display: block;
   position: relative;

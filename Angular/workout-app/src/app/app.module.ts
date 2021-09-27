@@ -28,7 +28,7 @@ import { DialogComponent } from './shared/components/dialog/dialog.component';
     BrowserAnimationsModule,
     LoginModule,
   ],
-  providers: [],
+  providers: [LoginComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
