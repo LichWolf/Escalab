@@ -4,17 +4,16 @@
 
 export const environment = {
   production: false,
-  dummy: false,
-  local: true,
+  dummy: true,
+  local: false,
 
-ip:{
-  // mocks:,
-  local: 'http://localhost:3000'
-},
-ruta:{
-  user: '/user'
-}
-
+  ip: {
+    mocks: '../assets/mocks/',
+    local: 'http://localhost:3000',
+  },
+  ruta: {
+    user: '/user',
+    loginMock: '../assets/mocks/login.json',
+    userDataMock: 'userData.json',
+  },
 };
-
-

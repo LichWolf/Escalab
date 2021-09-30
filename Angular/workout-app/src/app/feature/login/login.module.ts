@@ -9,6 +9,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DialogComponent } from 'src/app/shared/components/dialog/dialog.component';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 @NgModule({
   declarations: [],
@@ -23,6 +24,7 @@ import { MatMenuModule } from '@angular/material/menu';
     MatSidenavModule,
     MatDialogModule,
     MatMenuModule,
+    MatExpansionModule,
   ],
   exports: [
     MatInputModule,
@@ -34,6 +36,7 @@ import { MatMenuModule } from '@angular/material/menu';
     MatSidenavModule,
     MatDialogModule,
     MatMenuModule,
+    MatExpansionModule,
   ],
   entryComponents: [DialogComponent],
 })

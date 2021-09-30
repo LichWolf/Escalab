@@ -1,5 +1,38 @@
 @import "~src/assets/scss/_colors";
 
+.avatar {
+  width: 15%;
+  height: 15%;
+  background: none;
+}
+.form-control {
+  width: 75%;
+  margin: 1%;
+}
+.inputs {
+  display: flex;
+  flex-direction: column;
+
+  .mat-input-element:disabled {
+    color: $gray;
+  }
+}
+.nombre,
+.lastname,
+.email {
+  color: black;
+  border-radius: 4rem;
+  border: 1px solid black;
+  height: 3rem;
+  margin: 2%;
+}
+.mat-expansion-panel-header-title {
+  justify-content: center;
+}
+.userContainer {
+  display: flex;
+  // background-color: pink;
+}
 .user-table-container {
   background-color: $white;
 }
@@ -13,34 +46,36 @@
 .name,
 .secondName,
 .lastName,
-.secondLastName,
+.secondLN,
 .region,
 .state,
 .direction,
 .department {
-  width: 35%;
-  border: 1px solid;
-  margin: 4%;
-  border-radius: 8px;
+  color: $gray !important;
+  border-radius: 4rem;
   border: 1px solid black;
+  height: 2rem;
+  margin: 2%;
+  display: flex;
+  align-items: center;
+  width: 22rem;
+  padding: 0px 0px 0px 20px;
 }
-
-::ng-deep .ng-tns-c106-2.ng-star-inserted,
-.ng-tns-c106-3.ng-star-inserted,
-.ng-tns-c106-4.ng-star-inserted,
-.ng-tns-c106-5.ng-star-inserted,
-.ng-tns-c106-6.ng-star-inserted,
-.ng-tns-c106-7.ng-star-inserted,
-.ng-tns-c106-8.ng-star-inserted,
-.ng-tns-c106-9.ng-star-inserted {
-  color: $dark-light-blue;
+.mat-label {
+  color: $gray;
 }
-
-::ng-deep .matform-field-infix {
-  display: block;
-  position: relative;
-  flex: auto;
-  width: 390px;
-  border: 1px solid;
-  border-radius: 8px;
+.footer {
+  display: flex;
+  justify-content: right;
+  .button {
+    text-align: center;
+    background-color: #173181;
+    border-color: #173181;
+    color: #fff;
+    border: 2px solid transparent;
+    border-radius: 2rem;
+    .Maticon {
+      font-size: 15px;
+    }
+  }
 }

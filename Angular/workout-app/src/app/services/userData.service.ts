@@ -5,7 +5,7 @@ import axios from 'axios';
 @Injectable({
   providedIn: 'root',
 })
-export class LoginService {
+export class UserData {
   private endpoint: string;
   private header: {};
   private params: {};
@@ -14,7 +14,7 @@ export class LoginService {
     this.endpoint = '';
     this.header = {};
     this.params = {};
-    if (!environment.local) {
+    if (environment.local) {
       this.initializeLoginServiceLocal();
     } else {
       this.initializeLoginServiceDummy();
@@ -30,13 +30,15 @@ export class LoginService {
   }
 
   private initializeLoginServiceDummy() {
-    this.endpoint = `${environment.ruta.loginMock}`;
-    this.header = {};
+    this.endpoint = `${environment.ruta.userDataMock}`;
+    this.header = {
+      'Content-Type': 'aplication/json',
+    };
     this.params = {};
   }
 
-  public async getUser(email: any) {
-    this.endpoint = `${environment.ip.local}${environment.ruta.user}/${email}`;
+  public async getUserData(id: any) {
+    this.endpoint = `${environment.ip.local}/${id}`;
     const promise = await axios.get(this.endpoint, {
       headers: this.header,
       params: this.params,

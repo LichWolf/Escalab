@@ -35,8 +35,10 @@ export class LoginComponent implements OnInit {
 
   public async validateUser() {
     let email = this.loginForm.value.email;
-    let respone = await this._LoginService.getUserData(email);
+    let respone = await this._LoginService.getUser(email);
     let clave = this.loginForm.value.clave;
+    localStorage.setItem('user', respone[0].UserID);
+    localStorage.setItem('email', email);
     if (email == respone[0].email && clave == respone[0].clave) {
       this.authService.login();
       this.validateForm = true;
