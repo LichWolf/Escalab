@@ -1,5 +1,5 @@
 <div class="Container">
-    <form [formGroup]="loginForm" (submit)="Submit()">
+    <form [formGroup]="loginForm">
         <mat-card class="login">
             <mat-card-header>
                 <mat-card-title>Bienvenido, ingresa tus datos</mat-card-title>
@@ -20,8 +20,8 @@
                     </div>
                 </div>
             </mat-card-content>
-            <button class="loginIn" mat-raised-button color="primary" type="submit" (click)="Submit()">Log
-                In</button>
+            <button class="loginIn" mat-raised-button color="primary" type="submit"
+                (click)="validateUser()">LogIn</button>
         </mat-card>
     </form>
 </div>

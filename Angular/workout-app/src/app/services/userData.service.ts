@@ -5,7 +5,7 @@ import axios from 'axios';
 @Injectable({
   providedIn: 'root',
 })
-export class LoginService {
+export class UserData {
   private endpoint: string;
   private header: {};
   private params: {};
@@ -21,7 +21,7 @@ export class LoginService {
     }
   }
 
-  initializeLoginServiceLocal() {
+  private initializeLoginServiceLocal() {
     this.endpoint = `${environment.ip.local}${environment.ruta.user}`;
     this.header = {
       'Content-Type': 'aplication/json',
@@ -29,20 +29,29 @@ export class LoginService {
     this.params = {};
   }
 
-  initializeLoginServiceDummy() {
-    this.endpoint = `${environment.ruta.loginMock}`;
-    this.header = {};
+  private initializeLoginServiceDummy() {
+    this.endpoint = `${environment.ruta.userDataMock}`;
+    this.header = {
+      'Content-Type': 'aplication/json',
+    };
     this.params = {};
   }
 
-  public async getUser(email: any) {
-    let ruta = '';
-    if (!environment.local) {
-      ruta = this.endpoint;
-    } else {
-      ruta = `${this.endpoint}/${email}`;
-    }
-    const promise = await axios.get(ruta, {
+  public async getUserData(id: any) {
+    this.endpoint = `${environment.ip.local}/${id}`;
+    const promise = await axios.get(this.endpoint, {
+      headers: this.header,
+      params: this.params,
+    });
+    return promise.data;
+  }
+  public async updateUserData(userID: number, email: string, clave: any) {
+    this.params = {
+      UserID: userID,
+      email: email,
+      clave: clave,
+    };
+    const promise = await axios.put(this.endpoint, {
       headers: this.header,
       params: this.params,
     });

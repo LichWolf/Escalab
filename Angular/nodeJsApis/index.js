@@ -42,10 +42,21 @@ app.get('/user', (req, res) => {
     })
 });
 
-//GET all User's by ID
+//GET all User's by Email
 
-app.get('/user/:id', (req, res) => {
-    mysqlConnection.query('SELECT * FROM users  WHERE UserID = ?', [req.params.id], (err, rows, fields) => {
+app.get('/user/:email', (req, res) => {
+    mysqlConnection.query('SELECT * FROM users  WHERE email = ?', [req.params.email], (err, rows, fields) => {
+        if (!err)
+            res.send(rows);
+        else
+            console.log(err);
+    })
+});
+
+//GET User's Data from ID
+
+app.get('/:id_users', (req, res) => {
+    mysqlConnection.query('SELECT * FROM usinfo WHERE id_users = ?', [req.params.id_users], (err, rows, fields) => {
         if (!err)
             res.send(rows);
         else

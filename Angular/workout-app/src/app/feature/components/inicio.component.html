@@ -1,9 +1,10 @@
 <mat-drawer-container class="container">
-    <mat-drawer mode="side" opened>
-        <h2>Lado izquierdo</h2>
-        <h3>
-            aqui va el menu
-        </h3>
+    <mat-drawer mode="side" opened class='side-menu'>
+        <app-side-menu></app-side-menu>
     </mat-drawer>
-    <mat-drawer-content>Aqui va el dato del usuario</mat-drawer-content>
+    <mat-drawer-content>
+        <mat-card class='central-data'>
+            <app-user-data></app-user-data>
+        </mat-card>
+    </mat-drawer-content>
 </mat-drawer-container>
