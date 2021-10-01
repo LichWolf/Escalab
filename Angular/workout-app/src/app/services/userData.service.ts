@@ -45,4 +45,16 @@ export class UserData {
     });
     return promise.data;
   }
+  public async updateUserData(userID: number, email: string, clave: any) {
+    this.params = {
+      UserID: userID,
+      email: email,
+      clave: clave,
+    };
+    const promise = await axios.put(this.endpoint, {
+      headers: this.header,
+      params: this.params,
+    });
+    return promise.data;
+  }
 }

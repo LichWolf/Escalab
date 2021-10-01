@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  dummy: true,
-  local: false,
+  dummy: false,
+  local: true,
 
   ip: {
     mocks: '../assets/mocks/',

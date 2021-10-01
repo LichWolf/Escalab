@@ -14,14 +14,14 @@ export class LoginService {
     this.endpoint = '';
     this.header = {};
     this.params = {};
-    if (!environment.local) {
+    if (environment.local) {
       this.initializeLoginServiceLocal();
     } else {
       this.initializeLoginServiceDummy();
     }
   }
 
-  private initializeLoginServiceLocal() {
+  initializeLoginServiceLocal() {
     this.endpoint = `${environment.ip.local}${environment.ruta.user}`;
     this.header = {
       'Content-Type': 'aplication/json',
@@ -29,15 +29,20 @@ export class LoginService {
     this.params = {};
   }
 
-  private initializeLoginServiceDummy() {
+  initializeLoginServiceDummy() {
     this.endpoint = `${environment.ruta.loginMock}`;
     this.header = {};
     this.params = {};
   }
 
   public async getUser(email: any) {
-    this.endpoint = `${environment.ip.local}${environment.ruta.user}/${email}`;
-    const promise = await axios.get(this.endpoint, {
+    let ruta = '';
+    if (!environment.local) {
+      ruta = this.endpoint;
+    } else {
+      ruta = `${this.endpoint}/${email}`;
+    }
+    const promise = await axios.get(ruta, {
       headers: this.header,
       params: this.params,
     });
