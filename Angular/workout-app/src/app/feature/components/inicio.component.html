@@ -6,7 +6,7 @@
         <ng-container>
             <div *ngIf="centralData; else excercise">
                 <mat-card class='central-data'>
-                    <app-user-data></app-user-data>
+                    <app-user-data (userData)="newCentralData"></app-user-data>
                 </mat-card>
             </div>
             <ng-template #excercise>

@@ -1,4 +1,10 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ChangeDetectionStrategy,
+  EventEmitter,
+  Output,
+} from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { LoginService } from 'src/app/services/login.service';
@@ -15,7 +21,7 @@ export class SideMenuComponent implements OnInit {
   public sideBarData: any[string];
   public month: string[] = ['enero', 'febrero', 'marzo'];
   public muscle: string[] = ['femoral', 'pectoral', 'gluteos'];
-
+  @Output() newCentralData = new EventEmitter<boolean>();
   constructor(
     private router: Router,
     private authService: AuthService,
@@ -25,6 +31,7 @@ export class SideMenuComponent implements OnInit {
 
   ngOnInit(): void {
     this.getRutinasData();
+    console.log('desde side-menu', this.newCentralData);
   }
 
   logOut() {
@@ -40,6 +47,6 @@ export class SideMenuComponent implements OnInit {
   async assingUserName() {}
 
   exercise() {
-    this.router.navigateByUrl('user/profile/excercise');
+    // this.newCentralData.emit(false);
   }
 }

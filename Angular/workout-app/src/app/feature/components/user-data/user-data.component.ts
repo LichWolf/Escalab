@@ -17,6 +17,7 @@ export class UserDataComponent implements OnInit {
   public comuna = '';
   public direccion = '';
   public deptoNum = '';
+  public userData: boolean = false;
 
   constructor(private fb: FormBuilder, private _UserData: UserData) {}
 
@@ -46,6 +47,7 @@ export class UserDataComponent implements OnInit {
     this.comuna = response[0].comuna;
     this.direccion = response[0].direccion;
     this.deptoNum = response[0].deptoNumber;
+    // this.userData = this.newCentralData;
   }
   update() {
     //TODO: enviar actualizar datos
