@@ -5,7 +5,7 @@ import axios from 'axios';
 @Injectable({
   providedIn: 'root',
 })
-export class LoginService {
+export class RutinaService {
   private endpoint: string;
   private header: {};
   private params: {};
@@ -20,7 +20,6 @@ export class LoginService {
       this.initializeLoginServiceDummy();
     }
   }
-
   initializeLoginServiceLocal() {
     this.endpoint = `${environment.ip.local}${environment.ruta.user}`;
     this.header = {
@@ -30,32 +29,19 @@ export class LoginService {
   }
 
   initializeLoginServiceDummy() {
-    this.endpoint = '../assets/mocks/login.json';
+    this.endpoint = '../assets/mocks/rutinas.json';
     this.header = {};
     this.params = {};
   }
 
-  public async getUser(email: any) {
+  public async getRutinas() {
     let ruta = '';
     if (!environment.local) {
       ruta = this.endpoint;
     } else {
-      ruta = `${this.endpoint}/${email}`;
+      ruta = `${this.endpoint}`;
     }
     const promise = await axios.get(ruta, {
-      headers: this.header,
-      params: this.params,
-    });
-    console.log(promise.data);
-    return promise.data;
-  }
-  public async updateUserData(userID: number, email: string, clave: any) {
-    this.params = {
-      UserID: userID,
-      email: email,
-      clave: clave,
-    };
-    const promise = await axios.put(this.endpoint, {
       headers: this.header,
       params: this.params,
     });

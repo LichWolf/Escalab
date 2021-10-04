@@ -1,0 +1,116 @@
+{
+  "enero": {
+    "femoral": {
+      "Ejercicio1": "Curl Femoral",
+      "description1": "4x15",
+      "Ejercicio2": "Peso muerto Rumano",
+      "description2": "4x12",
+      "Ejercicio3": "Camilla Femoral",
+      "description3": "4x15",
+      "Ejercicio4": "Peso muerto a un pie",
+      "description4": "4x10",
+      "Ejercicio5": "Hip Trust",
+      "description5": "4x8"
+    },
+    "pectoral": {
+      "Ejercicio1": "Curl Femoral",
+      "description1": "4x15",
+      "Ejercicio2": "Peso muerto Rumano",
+      "description2": "4x12",
+      "Ejercicio3": "Camilla Femoral",
+      "description3": "4x15",
+      "Ejercicio4": "Peso muerto a un pie",
+      "description4": "4x10",
+      "Ejercicio5": "Hip Trust",
+      "description5": "4x8"
+    },
+    "gluteos": {
+      "Ejercicio1": "Curl Femoral",
+      "description1": "4x15",
+      "Ejercicio2": "Peso muerto Rumano",
+      "description2": "4x12",
+      "Ejercicio3": "Camilla Femoral",
+      "description3": "4x15",
+      "Ejercicio4": "Peso muerto a un pie",
+      "description4": "4x10",
+      "Ejercicio5": "Hip Trust",
+      "description5": "4x8"
+    }
+  },
+  "febrero": {
+    "femoral": {
+      "Ejercicio1": "Curl Femoral",
+      "description1": "4x15",
+      "Ejercicio2": "Peso muerto Rumano",
+      "description2": "4x12",
+      "Ejercicio3": "Camilla Femoral",
+      "description3": "4x15",
+      "Ejercicio4": "Peso muerto a un pie",
+      "description4": "4x10",
+      "Ejercicio5": "Hip Trust",
+      "description5": "4x8"
+    },
+    "pectoral": {
+      "Ejercicio1": "Curl Femoral",
+      "description1": "4x15",
+      "Ejercicio2": "Peso muerto Rumano",
+      "description2": "4x12",
+      "Ejercicio3": "Camilla Femoral",
+      "description3": "4x15",
+      "Ejercicio4": "Peso muerto a un pie",
+      "description4": "4x10",
+      "Ejercicio5": "Hip Trust",
+      "description5": "4x8"
+    },
+    "gluteos": {
+      "Ejercicio1": "Curl Femoral",
+      "description1": "4x15",
+      "Ejercicio2": "Peso muerto Rumano",
+      "description2": "4x12",
+      "Ejercicio3": "Camilla Femoral",
+      "description3": "4x15",
+      "Ejercicio4": "Peso muerto a un pie",
+      "description4": "4x10",
+      "Ejercicio5": "Hip Trust",
+      "description5": "4x8"
+    }
+  },
+  "marzo": {
+    "femoral": {
+      "Ejercicio1": "Curl Femoral",
+      "description1": "4x15",
+      "Ejercicio2": "Peso muerto Rumano",
+      "description2": "4x12",
+      "Ejercicio3": "Camilla Femoral",
+      "description3": "4x15",
+      "Ejercicio4": "Peso muerto a un pie",
+      "description4": "4x10",
+      "Ejercicio5": "Hip Trust",
+      "description5": "4x8"
+    },
+    "pectoral": {
+      "Ejercicio1": "Curl Femoral",
+      "description1": "4x15",
+      "Ejercicio2": "Peso muerto Rumano",
+      "description2": "4x12",
+      "Ejercicio3": "Camilla Femoral",
+      "description3": "4x15",
+      "Ejercicio4": "Peso muerto a un pie",
+      "description4": "4x10",
+      "Ejercicio5": "Hip Trust",
+      "description5": "4x8"
+    },
+    "gluteos": {
+      "Ejercicio1": "Curl Femoral",
+      "description1": "4x15",
+      "Ejercicio2": "Peso muerto Rumano",
+      "description2": "4x12",
+      "Ejercicio3": "Camilla Femoral",
+      "description3": "4x15",
+      "Ejercicio4": "Peso muerto a un pie",
+      "description4": "4x10",
+      "Ejercicio5": "Hip Trust",
+      "description5": "4x8"
+    }
+  }
+}

@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit {
     if (email == respone[0].email && clave == respone[0].clave) {
       this.authService.login();
       this.validateForm = true;
-      this.router.navigateByUrl('user');
+      this.router.navigateByUrl('user/profile');
     } else {
       this.openDialog();
     }

@@ -2,9 +2,19 @@
     <mat-drawer mode="side" opened class='side-menu'>
         <app-side-menu></app-side-menu>
     </mat-drawer>
-    <mat-drawer-content>
-        <mat-card class='central-data'>
-            <app-user-data></app-user-data>
-        </mat-card>
+    <mat-drawer-content class="rigth-side">
+        <ng-container>
+            <div *ngIf="centralData; else excercise">
+                <mat-card class='central-data'>
+                    <app-user-data></app-user-data>
+                </mat-card>
+            </div>
+            <ng-template #excercise>
+                <mat-card class='central-data'>
+                    <app-exercise-table></app-exercise-table>
+                </mat-card>
+            </ng-template>
+        </ng-container>
+
     </mat-drawer-content>
 </mat-drawer-container>

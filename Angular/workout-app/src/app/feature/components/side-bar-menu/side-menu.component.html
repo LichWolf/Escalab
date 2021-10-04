@@ -23,6 +23,16 @@
 </div>
 <div class='menu-container'>
     <div>
-        AQUI VA EL MENU DE LAS RUTINAS
+        <button class="boton-rutina" mat-button [matMenuTriggerFor]="rutinas">Rutinas</button>
+        <mat-menu #rutinas="matMenu">
+            <div *ngFor="let variable of month">
+                <button mat-menu-item [matMenuTriggerFor]="musculo">{{variable}}</button>
+            </div>
+        </mat-menu>
+        <mat-menu #musculo="matMenu">
+            <div *ngFor="let variable of muscle">
+                <button mat-menu-item (click)="exercise()">{{variable}}</button>
+            </div>
+        </mat-menu>
     </div>
 </div>

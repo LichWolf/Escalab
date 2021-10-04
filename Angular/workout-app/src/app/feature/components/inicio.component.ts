@@ -6,7 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./inicio.component.scss'],
 })
 export class InicioComponent implements OnInit {
-  constructor() {}
-
+  public centralData: boolean;
+  constructor() {
+    this.centralData = false;
+  }
+  //TODO: traer CentralData o similar hacia este componente
   ngOnInit(): void {}
 }

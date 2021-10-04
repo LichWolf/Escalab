@@ -1,3 +1,5 @@
+@import "~src/assets/scss/_colors";
+
 .user-container {
   width: auto;
   height: 15%;
@@ -21,4 +23,14 @@
     background: none;
     border: none;
   }
+}
+.menu-container {
+  display: flex;
+  justify-content: center;
+}
+.boton-rutina {
+  background-color: $secondary;
+  border-color: $secondary;
+  width: 10rem;
+  border-radius: 2rem;
 }

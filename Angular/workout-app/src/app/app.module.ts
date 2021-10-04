@@ -11,6 +11,7 @@ import { InicioComponent } from './feature/components/inicio.component';
 import { SideMenuComponent } from './feature/components/side-bar-menu/side-menu.component';
 import { UserDataComponent } from './feature/components/user-data/user-data.component';
 import { DialogComponent } from './shared/components/dialog/dialog.component';
+import { ExerciseTableComponent } from './feature/components/side-bar-menu/workout-table/exercise-table/exercise-table.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { DialogComponent } from './shared/components/dialog/dialog.component';
     SideMenuComponent,
     UserDataComponent,
     DialogComponent,
+    ExerciseTableComponent,
   ],
   imports: [
     BrowserModule,

@@ -30,7 +30,7 @@ export class UserData {
   }
 
   private initializeLoginServiceDummy() {
-    this.endpoint = `${environment.ruta.userDataMock}`;
+    this.endpoint = '../assets/mocks/userData.json';
     this.header = {
       'Content-Type': 'aplication/json',
     };
@@ -40,18 +40,6 @@ export class UserData {
   public async getUserData(id: any) {
     this.endpoint = `${environment.ip.local}/${id}`;
     const promise = await axios.get(this.endpoint, {
-      headers: this.header,
-      params: this.params,
-    });
-    return promise.data;
-  }
-  public async updateUserData(userID: number, email: string, clave: any) {
-    this.params = {
-      UserID: userID,
-      email: email,
-      clave: clave,
-    };
-    const promise = await axios.put(this.endpoint, {
       headers: this.header,
       params: this.params,
     });
