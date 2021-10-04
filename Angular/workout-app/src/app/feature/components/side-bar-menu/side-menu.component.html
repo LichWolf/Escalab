@@ -1,0 +1,42 @@
+<div class="user-container">
+    <div class="icon">
+        <mat-icon>account_circle</mat-icon>
+    </div>
+    <div class="user">
+        <span>{{ userName }}</span>
+        <div class="menu">
+            <button mat-icon-button [matMenuTriggerFor]="menu">
+                <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item>
+                    <mat-icon>face</mat-icon>
+                    <span>Profile</span>
+                </button>
+                <button mat-menu-item (click)="logOut()">
+                    <mat-icon>exit_to_app</mat-icon>
+                    <span>Logout</span>
+                </button>
+            </mat-menu>
+        </div>
+    </div>
+</div>
+<div class="menu-container">
+    <div>
+        <button class="boton-rutina" mat-button [matMenuTriggerFor]="rutinas">
+            Rutinas
+        </button>
+        <mat-menu #rutinas="matMenu">
+            <div *ngFor="let variable of month">
+                <button mat-menu-item [matMenuTriggerFor]="musculo">
+                    {{ variable }}
+                </button>
+            </div>
+        </mat-menu>
+        <mat-menu #musculo="matMenu">
+            <div *ngFor="let variable of muscle">
+                <button mat-menu-item (click)="exercise()">{{ variable }}</button>
+            </div>
+        </mat-menu>
+    </div>
+</div>

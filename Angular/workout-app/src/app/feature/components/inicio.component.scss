@@ -1,0 +1,23 @@
+@import "~src/assets/scss/_colors";
+
+.container {
+  width: 95%;
+  height: 95%;
+  margin: 10px;
+  border: 1px solid #555;
+  border-radius: 20px;
+
+  .side-menu {
+    width: 15%;
+    background: none;
+    background-color: $light-blue;
+  }
+  .central-data {
+    width: 75%;
+    margin: 1% 0% 0% 10%;
+    background-color: $white;
+  }
+  .rigth-side {
+    background-color: $light-gray;
+  }
+}

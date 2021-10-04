@@ -1,0 +1,12 @@
+@import "~src/assets/scss/colors";
+
+::ng-deep.mat-dialog-container {
+  background-color: $white !important;
+  color: black;
+  border-radius: 40px;
+}
+.button {
+  display: flex;
+  flex-direction: row-reverse;
+  align-content: unset;
+}
